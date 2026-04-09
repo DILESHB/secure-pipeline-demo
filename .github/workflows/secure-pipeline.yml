@@ -37,7 +37,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=secure-pipeline-demo
+            -Dsonar.projectKey=DILESHB_secure-pipeline-demo
             -Dsonar.organization=DILESHB
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.sources=.
