@@ -40,7 +40,6 @@ jobs:
             -Dsonar.projectKey=DILESHB_secure-pipeline-demo
             -Dsonar.organization=DILESHB
             -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.sources=.
 
   dast:
     runs-on: ubuntu-latest
