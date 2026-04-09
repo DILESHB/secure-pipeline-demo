@@ -29,16 +29,18 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: SonarQube Scan
-  uses: SonarSource/sonarqube-scan-action@v2
-  env:
-    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  with:
-    args: >
-      -Dsonar.projectKey=YOUR_PROJECT_KEY
-      -Dsonar.organization=YOUR_ORG
+        uses: SonarSource/sonarqube-scan-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=secure-pipeline-demo
+            -Dsonar.organization=DILESHB
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.sources=.
 
   dast:
     runs-on: ubuntu-latest
@@ -46,7 +48,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: OWASP ZAP Scan
         uses: zaproxy/action-baseline@v0.7.0
